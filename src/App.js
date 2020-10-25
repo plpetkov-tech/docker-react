@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={man} className="App-logo" alt="logo" />
         <p>
-          Plame you have to edit <code>src/App.js</code> and save to reload.
+           Changed from Travis CI
         </p>
         <a
           className="App-link"
