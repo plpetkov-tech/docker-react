@@ -1,23 +1,23 @@
-language: generic 
-
+language: generic
 sudo: required
-services: 
-    - docker
+
+services:
+  - docker
 
 before_install:
-    - docker build -f Dockerfile.dev -t plpetkov/docker-react .
+  - docker build -t plpetkov/docker-react -f Dockerfile.dev .
 
-script: 
-    - docker run -e CI=true plpetkov/docker-react npm run test
+script:
+  - docker run -e CI=true plpetkov/docker-react npm run test
 
 deploy:
-    provider: elasticbeanstalk
-    region: "eu-central-1"
-    app: "docker-react"
-    env: "DockerReact-env"
-    bucket_name: "elasticbeanstalk-eu-central-1-072009492510"
-    bucket_path: "docker-react"
-    on:
-        branch: master
+  provider: elasticbeanstalk
+  region: "eu-central-1"
+  app: "docker"
+  env: "Docker-env"
+  bucket_name: "elasticbeanstalk-eu-central-1-072009492510"
+  bucket_path: "docker"
+  on:
+    branch: master
     access_key_id: $ACCESS_KEY_ID
     secret_access_key: $SECRET_ACCESS_KEY
