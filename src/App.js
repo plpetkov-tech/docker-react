@@ -9,6 +9,9 @@ function App() {
         <p>
            Changed from Travis CI
         </p>
+        <p>
+           New feature
+        </p>
         <a
           className="App-link"
           href="https://reactjs.org"
